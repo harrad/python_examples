@@ -3,7 +3,9 @@ from PySide2.QtWidgets import QApplication, QDialog, QVBoxLayout, QListWidget, Q
 
 
 class CustomItemWidget(QWidget):
-
+    """
+    Custom item for ListViewWidget
+    """
     def __init__(self, text1, text2, parent = None):
         super(CustomItemWidget, self).__init__(parent)
 
@@ -17,7 +19,9 @@ class CustomItemWidget(QWidget):
 
 
 class Form(QDialog):
-
+    """
+    Main window form
+    """
     def __init__(self, parent=None):
         super(Form, self).__init__(parent)
         self.setWindowTitle("ListWidget Examples")
