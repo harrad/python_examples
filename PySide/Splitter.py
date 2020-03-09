@@ -61,6 +61,7 @@ class Form(QDialog):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
+    app.setStyleSheet("QSplitter::handle { background-color: gray }")
     form = Form()
     form.show()
 
