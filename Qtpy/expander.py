@@ -15,24 +15,23 @@ class Expander(QtWidgets.QWidget):
         self.set_expanded(is_expanded)
 
     def _make_header(self, text):
-        widget = QtWidgets.QToolButton(parent=self)
+        widget = QtWidgets.QToolButton(toggled=self.on_toggled, parent=self)
         self.layout().addWidget(widget)
 
         widget.setCheckable(True)
         widget.setToolButtonStyle(Qt.QtCore.Qt.ToolButtonTextBesideIcon)
         widget.setText(text)
-        widget.toggled.connect(self.on_toggled)
         widget.setArrowType(QtCore.Qt.RightArrow)
         widget.setSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Maximum)
 
         return widget
 
     def _make_content(self):
-        widget = QtWidgets.QFrame(parent=self)
+        widget = QtWidgets.QFrame(objectName="expander", parent=self)
         self.layout().addWidget(widget)
         widget.setLayout(QtWidgets.QVBoxLayout())
 
-        qss = "QFrame { border: 1px solid #abacad; border-top:0px; margin-left:1; margin-right:1; }"
+        qss = "QFrame#expander { border: 1px solid #abacad; border-top:0px; margin-left:1; margin-right:1; }"
         widget.setStyleSheet(qss)
 
         return widget
