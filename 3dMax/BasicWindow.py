@@ -1,6 +1,5 @@
-from MaxPlus import GetQMaxMainWindow
 from PySide2 import QtWidgets
-
+import qtmax
 
 class MainWindow(QtWidgets.QDialog):
     def __init__(self, parent=None):
@@ -21,5 +20,5 @@ class MainWindow(QtWidgets.QDialog):
 
 
 if __name__ == "__main__":
-    window = MainWindow(GetQMaxMainWindow())
+    window = MainWindow(qtmax.GetQMaxMainWindow())
     window.show()
