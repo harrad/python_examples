@@ -20,5 +20,11 @@ class MainWindow(QtWidgets.QDialog):
 
 
 if __name__ == "__main__":
-    window = MainWindow(qtmax.GetQMaxMainWindow())
+    parent = qtmax.GetQMaxMainWindow()
+
+    for i in parent.children():
+        if str(type(i)) == str(MainWindow):
+            i.setParent(None)
+
+    window = MainWindow(parent)
     window.show()
